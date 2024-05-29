@@ -7,9 +7,11 @@ body{
   display:block;
   height: 65px;
   width:250px;
-  background-color: #e24e1de5;
+  font-size: 25px;
+  background-color: #f5401c;
   text-align: center;
   padding-top: 40px;
+  color: white;
 }
 .container2{
   height: 700px;

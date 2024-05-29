@@ -1,21 +1,28 @@
-import React,{useState} from 'react'
-// import LineChart from './LineChart'
-const Footer = () => {
-  const [number,Setnumber]=useState(0);
-  const increment=()=>{
-    Setnumber(number+1)
-  }
-  const decrement=()=>{
-    Setnumber(number-1)
-  }
-  return (
-    <div class='container4'>
-      {number}<br/>
-      <button onClick={increment}>increment</button>
-      <button onClick={decrement}>decrement</button>
-      {/* <LineChart /> */}
-    </div>
-  )
-}
+import React, { useState } from 'react';
+import Chart from 'react-apexcharts';
 
-export default Footer 
+const Footer = () => {
+const chartOptions = {
+    chart: {
+      id: 'basic-line',
+    },
+    xaxis: {
+      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
+    },
+  };
+
+  const chartSeries = [
+    {
+      name: 'series-1',
+      data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+    },
+  ];
+
+  return (
+    <div className="container4">
+      <Chart options={chartOptions} series={chartSeries} type="line" width="700" />
+    </div>
+  );
+};
+
+export default Footer;
